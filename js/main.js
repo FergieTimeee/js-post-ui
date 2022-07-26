@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-console.log("hello word");
-=======
 import postApi from './api/postApi';
 
 // console.log('hello word');
@@ -21,4 +18,3 @@ async function main() {
 }
 
 main();
->>>>>>> Stashed changes
