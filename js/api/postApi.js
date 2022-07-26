@@ -21,6 +21,11 @@ const postApi = {
     return axiosClient.patch(url, data);
   },
 
+  updateFromData(data) {
+    const url = `/posts/${data.id}`;
+    return axiosClient.patch(url, data, { headers: { 'Content-Type': 'multipart/form-data' } });
+  },
+
   remove(id) {
     const url = `/posts/${id}`;
     return axiosClient.patch(url);
