@@ -23,7 +23,7 @@ const studentApi = {
 
   remove(id) {
     const url = `/students/${id}`;
-    return axiosClient.patch(url);
+    return axiosClient.delete(url);
   },
 };
 
