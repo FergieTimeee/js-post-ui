@@ -3,7 +3,7 @@ import axiosClient from './axiosClient';
 const postApi = {
   getAll(params) {
     const url = '/posts';
-    return axiosClient.get(url, { params, baseURL: 'http://abc.com' });
+    return axiosClient.get(url, { params });
   },
 
   getById(id) {
@@ -22,7 +22,7 @@ const postApi = {
   },
   updateFromData(data) {
     const url = `/posts/${data.id}`;
-    return axiosClient.patch(url, data, { headers: { 'Content-Type': 'mutipart/form-data' } });
+    return axiosClient.patch(url, data, { headers: { 'Content-Type': 'multipart/form-data' } });
   },
 
   remove(id) {
