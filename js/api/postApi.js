@@ -27,7 +27,7 @@ const postApi = {
 
   remove(id) {
     const url = `/posts/${id}`;
-    return axiosClient.patch(url);
+    return axiosClient.delete(url);
   },
 };
 
