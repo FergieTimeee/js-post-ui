@@ -13,7 +13,7 @@ const studentApi = {
 
   add(data) {
     const url = `/students/`;
-    return axiosClient.student(url, data);
+    return axiosClient.post(url, data);
   },
 
   update(data) {
