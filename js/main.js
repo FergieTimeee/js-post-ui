@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import postApi from './api/postApi';
 
 // console.log('hello word');
@@ -11,3 +12,14 @@ async function main() {
 }
 
 main();
+=======
+import axiosCline from './api/axiosClient';
+
+console.log('hello word');
+
+async function main() {
+  const response = await axiosCline.get('/posts');
+  console.log(response);
+}
+main();
+>>>>>>> Stashed changes
