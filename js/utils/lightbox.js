@@ -1,20 +1,21 @@
 function showModal(modalElement) {
+  if (!modalElement) return;
   const myModal = new window.bootstrap.Modal(modalElement);
   if (myModal) myModal.show();
 }
 export function registerLightbox({ modalId, imageSelector, prevSelector, nextSelector }) {
   const modalElement = document.getElementById(modalId);
-  console.log('🚀 ~ file: lightbox.js ~ line 7 ~ registerLightbox ~ modalElement', modalElement);
-
+  //   console.log('🚀 ~ file: lightbox.js ~ line 7 ~ registerLightbox ~ modalElement', modalElement);
   if (!modalElement) return;
 
+  if (Boolean(modalElement.dataset.registered)) return;
   //selector
   const imageElement = document.querySelector(imageSelector);
-  console.log('🚀 ~ file: lightbox.js ~ line 13 ~ registerLightbox ~ imageElement', imageElement);
+  //   console.log('🚀 ~ file: lightbox.js ~ line 13 ~ registerLightbox ~ imageElement', imageElement);
   const prevElement = document.querySelector(prevSelector);
-  console.log('🚀 ~ file: lightbox.js ~ line 15 ~ registerLightbox ~ prevElement', prevElement);
+  //   console.log('🚀 ~ file: lightbox.js ~ line 15 ~ registerLightbox ~ prevElement', prevElement);
   const nextElement = document.querySelector(nextSelector);
-  console.log('🚀 ~ file: lightbox.js ~ line 17 ~ registerLightbox ~ nextElement', nextElement);
+  //   console.log('🚀 ~ file: lightbox.js ~ line 17 ~ registerLightbox ~ nextElement', nextElement);
   if (!imageElement || !prevElement || !nextElement) return;
 
   //   lightbox vars
@@ -43,6 +44,13 @@ export function registerLightbox({ modalId, imageSelector, prevSelector, nextSel
     showImageAtIndex(currentIndex);
     showModal(modalElement);
   });
-  prevElement.addEventListener('click', () => {});
-  nextElement.addEventListener('click', () => {});
+  prevElement.addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + imgList.length) % imgList.length;
+    showImageAtIndex(currentIndex);
+  });
+  nextElement.addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % imgList.length;
+    showImageAtIndex(currentIndex);
+  });
+  modalElement.dataset.registered = 'true';
 }
