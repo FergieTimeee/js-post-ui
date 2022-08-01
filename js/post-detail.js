@@ -32,7 +32,12 @@ function renderPostDetail(post) {
 
 //Main
 (async () => {
-  registerLightbox();
+  registerLightbox({
+    modalId: 'lightbox',
+    imageSelector: 'img[data-id="lightboxImg"]',
+    prevSelector: 'button[data-id="lightboxPrev"]',
+    nextSelector: 'button[data-id="lightboxNext"]',
+  });
   //get post id form URL
   //fetch post detail API
   //render post detail
