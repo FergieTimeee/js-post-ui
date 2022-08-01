@@ -1,20 +1,7 @@
 import dayjs from 'dayjs';
 import postApi from './api/postApi';
-import { setTextContent } from './utils';
-// id="goToEditPageLink
-//   id = 'postHeroImage';
+import { setTextContent, registerLightbox } from './utils';
 
-//   id = 'postDetailTimeSpan';
-//   id = 'postDetailDescription';
-
-// title: "Voluptatem molestias", author: "Lois Durgan",…}
-// author: "Lois Durgan"
-// createdAt: 1633700485639
-// description: "officia omnis beatae vero est perspiciatis et totam non atque sed architecto temporibus asperiores quam necessitatibus est minus ut consectetur sed et explicabo reprehenderit officiis aut reprehenderit cum vel facilis vel in similique quod quam similique voluptas animi incidunt optio ipsum impedit in culpa eum sapiente velit autem culpa id"
-// id: "sktwi1cgkkuif36dv"
-// imageUrl: "https://picsum.photos/id/403/1368/400"
-// title: "Voluptatem molestias"
-// updatedAt: 1633700485639
 function renderPostDetail(post) {
   if (!post) return;
   //render title
@@ -45,6 +32,7 @@ function renderPostDetail(post) {
 
 //Main
 (async () => {
+  registerLightbox();
   //get post id form URL
   //fetch post detail API
   //render post detail
