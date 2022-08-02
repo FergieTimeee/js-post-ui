@@ -57,7 +57,7 @@ export function createElement(post) {
   //add click event for edit button
   const editButton = liElement.querySelector('[data-id="edit"]');
   if (editButton) {
-    editButton.addEventListener('click', (e) => {
+    editButton.addEventListener('click', () => {
       console.log('edit click');
       // e.stopPropagation();
       window.location.assign(`/add-edit-post.html?id=${post.id}`);
