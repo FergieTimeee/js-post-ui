@@ -45,10 +45,24 @@ export function createElement(post) {
     });
   }
 
-  const divElement = liElement.firstElementChild;
-  divElement.addEventListener('click', () => {
-    window.location.assign(`http://localhost:5173/post-detail.html?id=${post.id}`);
+  const divElement = liElement.firstElementChild?.firstElementChild;
+  divElement.addEventListener('click', (event) => {
+    //if event trigger from menu --> ignore
+    const menu = liElement.querySelector('[data-id="menu]');
+    if (menu && menu.contains(event.target)) return;
+    console.log('parent click');
+    window.location.assign(`/post-detail.html?id=${post.id}`);
   });
+
+  //add click event for edit button
+  const editButton = liElement.querySelector('[data-id="edit"]');
+  if (editButton) {
+    editButton.addEventListener('click', (e) => {
+      console.log('edit click');
+      // e.stopPropagation();
+      window.location.assign(`/add-edit-post.html?id=${post.id}`);
+    });
+  }
   //attach Event
   return liElement;
 }
