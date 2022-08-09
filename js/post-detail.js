@@ -46,7 +46,7 @@ function renderPostDetail(post) {
     const searchParams = new URLSearchParams(window.location.search);
     // console.log(searchParams);
     const postId = searchParams.get('id');
-    console.log(postId);
+    // console.log(postId);
     if (!postId) {
       console.log('post not found');
       return;

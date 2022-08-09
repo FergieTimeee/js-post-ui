@@ -16,9 +16,9 @@ import { initPostForm } from './utils';
           imageUrl: '',
         };
 
-    console.log('🚀 ~ file: add-edit-post.js ~ line 14 ~ defaultValue', defaultValues);
-    console.log('mode', postId ? 'edit' : 'add');
-    console.log('🚀 ~ file: add-edit-post.js ~ line 16 ~ postId', postId);
+    // console.log('🚀 ~ file: add-edit-post.js ~ line 14 ~ defaultValue', defaultValues);
+    // console.log('mode', postId ? 'edit' : 'add');
+    // console.log('🚀 ~ file: add-edit-post.js ~ line 16 ~ postId', postId);
     initPostForm({
       formId: 'postForm',
       defaultValues,
